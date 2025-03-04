@@ -9,7 +9,7 @@
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ jobs:
 
       - name: Build the Docusaurus site
         env:
-          DOCUSAURUS_BASEURL: '/'
+          DOCUSAURUS_BASEURL: '/micro-test-plus-xpack-webpreview/'
           DOCUSAURUS_IS_PREVIEW: 'true'
         run: |
           npm run doxygen -C website

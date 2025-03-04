@@ -10,7 +10,13 @@
     "npm-link": "npm link",
     "npm-outdated": "npm outdated",
     "npm-update": "npm update",
-    "deep-clean": "del-cli node_modules package-lock.json"
+    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
+    "npm-pack": "npm pack",
+    "npm-version-patch": "npm version patch",
+    "npm-version-minor": "npm version minor",
+    "git-log": "git log --pretty='%cd * %h %s' --date=short",
+    "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
+    "postversion": "git push origin --all && git push origin --tags"
   },
   "repository": {
     "type": "git",
@@ -25,10 +31,15 @@
   "contributors": [],
   "license": "MIT",
   "bugs": {
-    "url": "https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/issues"
+    "url": "https://github.com/micro-os-plus/micro-test-plus-xpack-webpreview/issues"
   },
   "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/",
   "dependencies": {},
+  "$devDependenciesUrls": [
+    "https://www.npmjs.com/package/del-cli",
+    "https://www.npmjs.com/package/json",
+    "https://www.npmjs.com/package/liquidjs"
+  ],
   "devDependencies": {
     "del-cli": "^6.0.0",
     "json": "^11.0.0",
@@ -36,6 +47,7 @@
   },
   "bundleDependencies": [],
   "topConfig": {
+    "descriptiveName": "µTest++ Web Preview",
     "isWebDeployOnly": "true",
     "isWebPreview": "true"
   },
