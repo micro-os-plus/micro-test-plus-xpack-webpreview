@@ -80,6 +80,7 @@ jobs:
           mkdir -pv website/doxygen/.local/bin
           ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/doxygen/.local/bin/doxygen
           ls -l website website/doxygen
+          echo "$(pwd)/website/doxygen/.local/bin" >> $GITHUB_PATH
 
       - name: Build the Docusaurus site
         env:
