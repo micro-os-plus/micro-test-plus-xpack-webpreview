@@ -69,7 +69,7 @@ jobs:
       - name: Install dependencies
         run: npm --prefix website ci
 
-      - name: Install Doxygen
+      - name: Install Doxygen & generate Doxygen web preview
         # https://www.doxygen.nl/download.html
         env:
           DOXYGEN_VERSION: "1.17.0"
@@ -81,13 +81,13 @@ jobs:
           ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/doxygen/.local/bin/doxygen
           ls -l website website/doxygen
           echo "$(pwd)/website/doxygen/.local/bin" >> $GITHUB_PATH
+          npm --prefix website run generate-webpreview-doxygen
 
       - name: Build the Docusaurus site
         env:
           DOCUSAURUS_BASEURL: '/micro-test-plus-xpack-webpreview/'
           DOCUSAURUS_IS_PREVIEW: 'true'
         run: |
-          npm --prefix website run generate-webpreview-doxygen
           npm --prefix website run build
 
       - name: Setup Pages
