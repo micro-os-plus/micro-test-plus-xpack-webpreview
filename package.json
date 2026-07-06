@@ -6,7 +6,7 @@
   "scripts": {
     "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --micro-os-plus",
     "npm-install": "npm install",
-    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper",
     "npm-link": "npm link",
     "npm-outdated": "npm outdated",
     "npm-update": "npm update",
@@ -16,7 +16,8 @@
     "npm-version-minor": "npm version minor",
     "git-log": "git log --pretty='%cd * %h %s' --date=short",
     "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
-    "postversion": "git push origin --all && git push origin --tags"
+    "postversion": "git push origin --all && git push origin --tags",
+    "npm-ci": "npm ci"
   },
   "repository": {
     "type": "git",
@@ -35,23 +36,25 @@
   },
   "homepage": "https://micro-os-plus.github.io/micro-test-plus-xpack-webpreview/",
   "dependencies": {},
-  "$devDependenciesUrls": [
-    "https://www.npmjs.com/package/del-cli",
-    "https://www.npmjs.com/package/json",
-    "https://www.npmjs.com/package/liquidjs"
-  ],
+  "$dependenciesUrls": {
+    "del-cli": "https://www.npmjs.com/package/del-cli",
+    "glob": "https://www.npmjs.com/package/glob",
+    "json": "https://www.npmjs.com/package/json",
+    "json5": "https://www.npmjs.com/package/json5",
+    "jsonc-parser": "https://www.npmjs.com/package/jsonc-parser",
+    "liquidjs": "https://www.npmjs.com/package/liquidjs"
+  },
   "devDependencies": {
-    "del-cli": "^6.0.0",
+    "del-cli": "^7.0.0",
     "json": "^11.0.0",
-    "liquidjs": "^10.19.1"
+    "liquidjs": "^10.25.0",
+    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
+    "glob": "^13.0.6",
+    "json5": "^2.2.3",
+    "jsonc-parser": "^3.3.1"
   },
   "bundleDependencies": [],
-  "topConfig": {
-    "descriptiveName": "µTest++ Web Preview",
-    "isWebDeployOnly": "true",
-    "isWebPreview": "true"
-  },
   "engines": {
-    "node": " >=18.0.0"
+    "node": ">=20.0"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "descriptiveName": "µTest++ Web Preview",
+  "preferredName": "µTest++ Web Preview",
+  "isWebDeployOnly": true,
+  "isWebPreview": true,
+  "useSelfHostedRunners": false
+}
